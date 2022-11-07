@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const authRoutes = require("./Routes/AuthRoutes");
+const rutaIngreso = require("./Routes/RutaIngreso");
 const cookieParser = require("cookie-parser");
 require("dotenv").config();
 
@@ -38,6 +39,7 @@ app.use(cookieParser());
 
 //Rutas
 app.use("/", authRoutes);
+app.use("/ingreso", rutaIngreso);
 
 app.listen(5000, () => {
   console.log("Server started in port 5000");

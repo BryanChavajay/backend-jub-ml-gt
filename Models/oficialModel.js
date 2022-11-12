@@ -6,9 +6,11 @@ const oficialSchema = new mongoose.Schema({
   },
   DPI: {
     type: String,
+    unique: true,
   },
   NIT: {
     type: String,
+    unique: true,
   },
   Tipo: {
     type: String,
@@ -26,6 +28,9 @@ const oficialSchema = new mongoose.Schema({
     type: String,
   },
   Pension: {
+    type: Number,
+  },
+  UltimoPago: {
     type: Number,
   },
 });

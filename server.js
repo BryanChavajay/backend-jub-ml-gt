@@ -11,6 +11,10 @@ const frontend = process.env.FRONTEND;
 
 //Conection with MongoDBAtlas
 const uri = process.env.URIMONGOATLAS;
+
+//Variable para indicar el puerto
+const PORT = process.env.PORT || 3000;
+
 mongoose
   .connect(uri, {
     useNewUrlParser: true,
@@ -41,6 +45,6 @@ app.use(cookieParser());
 app.use("/", authRoutes);
 app.use("/ingreso", rutaIngreso);
 
-app.listen(5000, () => {
-  console.log("Server started in port 5000");
+app.listen(PORT, () => {
+  console.log(`Server started in port ${PORT}`);
 });
